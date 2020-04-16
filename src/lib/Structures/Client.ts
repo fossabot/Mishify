@@ -7,4 +7,4 @@ export default class MishifyClient extends Client {
         super(options);
         this.events = new Collection<string, any>();
     }
-}
+};
