@@ -16,6 +16,9 @@
   },
   "keywords": [],
   "author": "Phamzito",
+  "contributors": [
+    "gatomo-oficial"
+  ],
   "license": "MIT",
   "bugs": {
     "url": "https://github.com/Mishify/Mishify/issues"
@@ -32,6 +35,12 @@
     "typescript": "^3.8.3"
   },
   "dependencies": {
-    "klasa": "github:dirigeants/klasa#v1.0.0-alpha"
+    "@kcp/functions": "^1.0.0",
+    "canvas": "^2.6.1",
+    "canvas-constructor": "^3.2.0",
+    "cluster": "^0.7.7",
+    "discord.js": "^12.2.0",
+    "klasa": "github:dirigeants/klasa#v1.0.0-alpha",
+    "process-as-promised": "^1.0.1"
   }
 }
