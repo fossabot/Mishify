@@ -392,6 +392,18 @@
       "./src/lib/structures/command.ts": {
         "version": "ebd344a55a8a634bb8f01e717bc0373d94372eca73d552ff06289ba271261f90",
         "signature": "9e8c524fc17b1566bf6316ad9034695792673e0098c35149a517b2084836c4dd"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts": {
+        "version": "3994ebfd11faa4018d8e1b879190046588f41f5cd60438e642ca39a705c726be",
+        "signature": "3994ebfd11faa4018d8e1b879190046588f41f5cd60438e642ca39a705c726be"
+      },
+      "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts": {
+        "version": "f70480d027374c4c3fae588cd7b8137d51c43c619a9de162358bfe0195921947",
+        "signature": "f70480d027374c4c3fae588cd7b8137d51c43c619a9de162358bfe0195921947"
+      },
+      "./src/providers/mongodb.ts": {
+        "version": "74920f7b65075de7c364aea80c1daaa39b13adf9f5411ec511553e1586064574",
+        "signature": "8be0482c09c750cce8108ed8617e326c75c207187bdae69ee94b528f15b21777"
       }
     },
     "options": {
@@ -421,6 +433,7 @@
       "strictBindCallApply": true,
       "target": 99,
       "project": "./",
+      "watch": true,
       "configFilePath": "./tsconfig.json"
     },
     "referencedMap": {
@@ -1414,6 +1427,40 @@
         "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
         "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
         "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/.pnpm/github.com/discordjs/discord.js/6367f603f611e9dec2d5365225102fd7758f0e90/node_modules/discord.js/typings/index.d.ts",
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/.pnpm/github.com/discordjs/discord.js/6367f603f611e9dec2d5365225102fd7758f0e90/node_modules/discord.js/typings/index.d.ts",
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/providers/mongodb.ts": [
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts",
+        "./node_modules/.pnpm/github.com/discordjs/discord.js/6367f603f611e9dec2d5365225102fd7758f0e90/node_modules/discord.js/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
       ]
     },
     "exportedModulesMap": {
@@ -2349,6 +2396,34 @@
       ],
       "./src/lib/structures/command.ts": [
         "./node_modules/klasa/typings/index.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/.pnpm/github.com/discordjs/discord.js/6367f603f611e9dec2d5365225102fd7758f0e90/node_modules/discord.js/typings/index.d.ts",
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/events.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/stream.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/tls.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/index.d.ts",
+        "./node_modules/.pnpm/github.com/discordjs/discord.js/6367f603f611e9dec2d5365225102fd7758f0e90/node_modules/discord.js/typings/index.d.ts",
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/fs.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/util.d.ts",
+        "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/util.d.ts"
+      ],
+      "./src/providers/mongodb.ts": [
+        "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts",
+        "./node_modules/.pnpm/github.com/dirigeants/klasa/0ad0446842e7d57e454d9571d8ee2ff7f478a6df_discord.js@12.2.0/node_modules/klasa/typings/index.d.ts"
       ]
     },
     "semanticDiagnosticsPerFile": [
@@ -2397,6 +2472,10 @@
       "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/structures/functionstore.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/lib/client.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@kcp/functions/1.0.0_a75f5dd21871206ee70369e452ce5bb4/node_modules/@kcp/functions/dist/index.d.ts",
+      "./src/lib/structures/client.ts",
+      "./src/lib/structures/sharder.ts",
+      "./src/lib/index.ts",
+      "./src/mishify.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/globals.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/async_hooks.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/buffer.d.ts",
@@ -2444,12 +2523,11 @@
       "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/assert.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/@types/node/13.13.4/node_modules/@types/node/ts3.2/index.d.ts",
       "./node_modules/.pnpm/registry.npmjs.org/dotenv/8.2.0/node_modules/dotenv/types/index.d.ts",
+      "./src/index.ts",
       "./src/lib/structures/command.ts",
-      "./src/lib/structures/client.ts",
-      "./src/lib/structures/sharder.ts",
-      "./src/lib/index.ts",
-      "./src/mishify.ts",
-      "./src/index.ts"
+      "./node_modules/.pnpm/registry.npmjs.org/@types/bson/4.0.2/node_modules/@types/bson/index.d.ts",
+      "./node_modules/.pnpm/registry.npmjs.org/@types/mongodb/3.5.14/node_modules/@types/mongodb/index.d.ts",
+      "./src/providers/mongodb.ts"
     ]
   },
   "version": "3.8.3"
