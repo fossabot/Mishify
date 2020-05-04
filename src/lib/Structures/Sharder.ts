@@ -1,5 +1,5 @@
-import _cluster from 'cluster';
-import ProcessAsPromised from 'process-as-promised';
+import * as cluster from 'cluster';
+import * as ProcessAsPromised from 'process-as-promised';
 import { SharderIPC } from '../';
 class Shard {
 
@@ -50,9 +50,9 @@ export default class Sharder {
 	public shards: Map<number, Shard>
 	public shutdown: boolean
 	constructor(token: string, count: number) {
-		this.cluster = _cluster;
+		this.cluster = cluster;
 		this.cluster.setupMaster({
-			exec: 'Mishify.js'
+			exec: 'dist/Mishify.js'
 		});
 		/* eslint-disable no-process-env */
 		this.token = token || process.env.TOKEN;

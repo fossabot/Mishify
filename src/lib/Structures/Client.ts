@@ -1,6 +1,6 @@
 import { Client, KlasaClientOptions } from 'klasa';
 import { Client as Functions } from '@kcp/functions';
-import ProcessAsPromised from 'process-as-promised';
+import * as ProcessAsPromised from 'process-as-promised';
 // plugins
 Client.use(Functions);
 
