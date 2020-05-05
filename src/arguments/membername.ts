@@ -4,13 +4,11 @@ import { Possible, Argument, util } from "klasa";
 const USER_REGEXP = Argument.regex.userOrMember;
 
 function resolveMember(query: GuildMember | User | string, guild: Guild) {
-  console.log(query)
 	if (query instanceof GuildMember) return query;
 	if (query instanceof User) return guild.members.fetch(query.id);
 	if (typeof query === 'string') {
 		if (USER_REGEXP.test(query)) return guild.members.fetch(USER_REGEXP.exec(query)[1]).catch(() => null);
 		if (/\w{1,32}#\d{4}/.test(query)) {
-      console.log(/\w{1,32}#\d{4}/.test(query))
 			const res = guild.members.cache.find(member => member.user.tag.toLowerCase() === query.toLowerCase());
 			return res || null;
 		}
