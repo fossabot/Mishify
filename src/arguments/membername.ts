@@ -1,5 +1,5 @@
-import { GuildMember, Guild, User, Message} from "discord.js";
-import { Possible, Argument, util } from "klasa";
+import { GuildMember, Guild, User, Message } from 'discord.js';
+import { Possible, Argument, util } from 'klasa';
 
 const USER_REGEXP = Argument.regex.userOrMember;
 
@@ -18,7 +18,7 @@ function resolveMember(query: GuildMember | User | string, guild: Guild) {
 
 export default class extends Argument {
 
-	async run(arg:any, possible:Possible, msg:Message) {
+	async run(arg: any, possible: Possible, msg: Message) {
 		if (!msg.guild) throw 'Este comando solo se puede usar en un servidor.';
 		const resUser = await resolveMember(arg, msg.guild);
 		if (resUser) return resUser;
@@ -45,4 +45,4 @@ export default class extends Argument {
 		}
 	}
 
-};
+}
