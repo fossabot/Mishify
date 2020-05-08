@@ -1,5 +1,5 @@
 import { Command } from '../../lib';
-import { MessageEmbed, GuildMember } from 'discord.js';
+import { MessageEmbed } from 'discord.js';
 import { CommandStore, KlasaMessage } from 'klasa';
 export default class extends Command {
 
