@@ -2,7 +2,7 @@ import { GuildMember, Guild, User, Message } from 'discord.js';
 import { Possible, Argument, util } from 'klasa';
 
 const USER_REGEXP = Argument.regex.userOrMember;
-
+/* eslint-disable  */
 function resolveMember(query: GuildMember | User | string, guild: Guild) {
 	if (query instanceof GuildMember) return query;
 	if (query instanceof User) return guild.members.fetch(query.id);
