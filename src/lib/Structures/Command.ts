@@ -1,5 +1,6 @@
 import { CommandStore, Command } from 'klasa';
 
+
 export default class MishifyCommand extends Command {
 
 	public premiumOnly: boolean
@@ -7,5 +8,6 @@ export default class MishifyCommand extends Command {
 		super(store, file, directory, options);
 		this.premiumOnly = premiumOnly;
 	}
+
 
 }
