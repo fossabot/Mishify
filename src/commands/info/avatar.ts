@@ -22,9 +22,11 @@ export default class extends Command {
 		const avatar = new MessageEmbed()
 			.setAuthor(member.tag, member.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
 			.setColor(message.member.displayColor)
-			.setImage(member.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
-			.setFooter(message.author.tag, message.author.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
-			.setTimestamp(new Date());
+			.setImage(member.avatarURL({ format: 'png', dynamic: true, size: 1024 }));
+		if (message.author !== member) {
+			avatar.setFooter(message.author.tag, message.author.avatarURL({ format: 'png', dynamic: true, size: 1024 }));
+		}
+		avatar.setTimestamp(new Date());
 
 		return message.send(avatar);
 	}
