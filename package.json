@@ -45,8 +45,8 @@
     "cluster": "^0.7.7",
     "discord.js": "github:discordjs/discord.js",
     "klasa": "github:dirigeants/klasa#v1.0.0-alpha",
+    "kurasuta": "^2.1.0",
     "mongodb": "^3.5.7",
-    "process-as-promised": "^1.0.1",
     "request": "^2.88.2"
   }
 }

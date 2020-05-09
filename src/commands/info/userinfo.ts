@@ -1,5 +1,5 @@
 import { Command } from '../../lib';
-import { MessageEmbed } from 'discord.js';
+// import { MessageEmbed } from 'discord.js';
 import { CommandStore, KlasaMessage } from 'klasa';
 export default class extends Command {
 
@@ -19,7 +19,7 @@ export default class extends Command {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	async run(message: KlasaMessage, [member = message.author]) {
-
+		return message.send('en desarollo');
 	}
 
 }

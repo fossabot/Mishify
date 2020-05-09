@@ -1,17 +1,58 @@
-import { Sharder } from './lib';
-import { Util } from 'discord.js';
-import { config } from 'dotenv';
-config();
-async function main(): Promise<void> {
-	/* eslint-disable no-process-env */
-	const result = await Util.fetchRecommendedShards(process.env.TOKEN);
-	const sharder = new Sharder(process.env.TOKEN, result);
-	/* eslint-disable id-length */
-	sharder.cluster.on('error', (e) => console.log(e));
-	sharder.cluster.on('online', (worker) => {
-		console.log(`[SHARDER] Se lanzo el worker ${worker.id}.`, { worker: worker.id });
-	});
-	sharder.spawn();
-}
+/* eslint-disable @typescript-eslint/ban-ts-ignore */
+/* eslint-disable no-process-env */
+import { ShardingManager } from 'kurasuta';
+import { join } from 'path';
+import { Constants } from 'discord.js';
+import { config } from 'dotenv'
+import { Mishify } from './lib';
+// @ts-ignore
+Constants.DefaultOptions.ws.properties.$browser = 'Discord Android';
 
-main();
+
+config();
+
+
+const sharder: ShardingManager = new ShardingManager(join(__dirname, 'Mishify'), {
+	token: process.env.TOKEN,
+	client: Mishify,
+	clientOptions: {
+		// @ts-ignore
+		prefix: process.env.PREFIX,
+		language: process.env.LANGUAGE,
+		commandEditing: true,
+		providers: {
+			mongodb: {
+				db: 'mishify',
+				connectionString: process.env.MONGO_URL,
+				options: {}
+			},
+			default: 'mongodb'
+		},
+		preserveSettings: false,
+		console: {
+			timestamps: true,
+			utc: false,
+			colors: {
+				debug: { time: { background: 'magenta' } },
+				error: { time: { background: 'red' } },
+				log: { time: { background: 'blue' } },
+				verbose: { time: { text: 'gray' } },
+				warn: { time: { background: 'lightyellow', text: 'black' } },
+				wtf: { message: { text: 'red' }, time: { background: 'red' } }
+			}
+		},
+		production: false,
+		prefixCaseInsensitive: true,
+		messageSweepInterval: 480,
+		messageCacheLifetime: 120,
+
+		commandMessageLifetime: 120,
+		owners: ['497061687820812288'],
+		aliasFunctions: { returnMethod: 'run', prefix: 'funcs', enabled: true }
+	},
+	shardCount: 1,
+	ipcSocket: 9454,
+	timeout: 60000
+});
+
+sharder.spawn();
