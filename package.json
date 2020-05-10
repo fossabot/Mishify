@@ -1,6 +1,6 @@
 {
   "name": "mishify",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "",
   "main": "dist/index.js",
   "scripts": {
@@ -46,6 +46,8 @@
     "discord.js": "github:discordjs/discord.js",
     "klasa": "github:dirigeants/klasa#v1.0.0-alpha",
     "kurasuta": "^2.1.0",
+    "moment": "^2.25.3",
+    "moment-duration-format": "^2.3.2",
     "mongodb": "^3.5.7",
     "request": "^2.88.2"
   }

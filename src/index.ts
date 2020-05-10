@@ -1,9 +1,9 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 /* eslint-disable no-process-env */
-import { ShardingManager } from 'kurasuta';
+import { ShardingManager, SharderEvents } from 'kurasuta';
 import { join } from 'path';
 import { Constants } from 'discord.js';
-import { config } from 'dotenv'
+import { config } from 'dotenv';
 import { Mishify } from './lib';
 // @ts-ignore
 Constants.DefaultOptions.ws.properties.$browser = 'Discord Android';
@@ -56,3 +56,6 @@ const sharder: ShardingManager = new ShardingManager(join(__dirname, 'Mishify'),
 });
 
 sharder.spawn();
+sharder.on(SharderEvents.MESSAGE, message => {
+	console.log(message);
+});
