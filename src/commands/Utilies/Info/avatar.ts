@@ -1,4 +1,4 @@
-import { Command } from '../../lib';
+import { Command } from '../../../lib';
 import { MessageEmbed } from 'discord.js';
 import { CommandStore, KlasaMessage } from 'klasa';
 export default class extends Command {
@@ -18,7 +18,7 @@ export default class extends Command {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-	async run(message: KlasaMessage, [member = message.author]) {
+	public async run(message: KlasaMessage, [member = message.author]) {
 		const avatar = new MessageEmbed()
 			.setAuthor(member.tag, member.avatarURL({ format: 'png', dynamic: true, size: 1024 }))
 			.setColor(message.member.displayColor)

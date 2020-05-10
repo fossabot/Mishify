@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
-import { Command } from '../../lib';
+import { Command } from '../../../lib';
 import { MessageEmbed } from 'discord.js';
 import { CommandStore, KlasaMessage, KlasaUser } from 'klasa';
 import * as moment from 'moment';
@@ -11,6 +11,7 @@ export default class extends Command {
 	constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
 			name: 'userinfo',
+			aliases: ['user_info'],
 			premiumOnly: false,
 			enabled: true,
 			runIn: ['text'],
@@ -35,7 +36,7 @@ export default class extends Command {
 	}
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
-	async run(message: KlasaMessage, [user = message.author]: [KlasaUser]) {
+	public async run(message: KlasaMessage, [user = message.author]: [KlasaUser]) {
 		const embed = new MessageEmbed()
 			.setTitle(`Información del ${user.bot ? 'bot' : 'usuario'}`)
 			.setColor('#2f3136')
@@ -50,10 +51,9 @@ export default class extends Command {
 			// eslint-disable-next-line id-length
 			const roles = guildMember.roles.cache.map(r => r.name);
 			embed.addBetterField('Fecha de unión', `__${moment(message.member.joinedAt.getTime()).format('L - LTS')}__`)
-				.addBetterField('Actividad', ``)
 				.addBetterField('Estado', this.status[user.presence.status])
 				.addBetterField('Apodo', guildMember.nickname ? guildMember.nickname : '-')
-				.addBetterField('Roles', `\`${roles.length === 0 ? '-' : `${roles.length} - ${roles.join(', ')}`}\``);
+				.addBetterField('Roles', `${roles.length === 0 ? '-' : `${roles.length} - ${roles.join(', ')}`}`);
 		}
 		embed.setThumbnail(user.avatarURL({ format: 'png', dynamic: true, size: 1024 }));
 		return message.send(embed);

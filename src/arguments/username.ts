@@ -1,5 +1,5 @@
-import { Argument, util, Possible } from 'klasa';
-import { GuildMember, User, Guild, Message } from 'discord.js';
+import { Argument, util, Possible, KlasaMessage } from 'klasa';
+import { GuildMember, User, Guild } from 'discord.js';
 const USER_REGEXP = Argument.regex.userOrMember;
 /* eslint-disable */
 function resolveUser(query: GuildMember | User | string, guild: Guild) {
@@ -17,7 +17,7 @@ function resolveUser(query: GuildMember | User | string, guild: Guild) {
 
 export default class extends Argument {
 
-	async run(arg: string, possible:Possible, msg: Message) {
+	async run(arg: string, possible: Possible, msg: KlasaMessage) {
 		if (!msg.guild) return this.store.get('user').run(arg, possible, msg);
 		const resUser = await resolveUser(arg, msg.guild);
 		if (resUser) return resUser;
@@ -38,7 +38,7 @@ export default class extends Argument {
 		}
 
 		switch (querySearch.length) {
-			case 0: throw `${possible.name} Debe ser un nombre válido, ID o mención`;
+			case 0: throw `${possible.name} debe ser un nombre válido, ID o mención`;
 			case 1: return querySearch[0];
 			default: throw `Se encontraron múltiples coincidencias:  \`${querySearch.map(user => user.tag).join('`, `')}\``;
 		}
