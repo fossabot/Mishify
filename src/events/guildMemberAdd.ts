@@ -22,7 +22,7 @@ export default class extends Event {
 			}
 		}
 		// y aca los rolas para los bots
-		if (member.guild.settings.get('toggles.autoroles')) {
+		if (member.guild.settings.get('toggles.autobotroles')) {
 			if (member.user.bot) {
 				const roles = await member.guild.settings.get('roles.autobotroles');
 				member.roles.add(roles).catch(() => null);
