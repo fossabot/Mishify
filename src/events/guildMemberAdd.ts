@@ -14,8 +14,14 @@ export default class extends Event {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	async run(member: GuildMember) {
-		if (member.guild.id === '696492359004979281') {
-			member.roles.add('696492359004979287');
+		if (member.guild.settings.get('toggles.autobotroles')) {
+			if (!member.user.bot) {
+				const roles = await member.guild.settings.get('roles.autoroles');
+				member.roles.add(roles);
+			} else {
+				const roles = await member.guild.settings.get('roles.autobotroles');
+				member.roles.add(roles);
+			}
 		}
 	}
 

@@ -24,7 +24,7 @@ export default class extends Command {
 
 	// eslint-disable-next-line @typescript-eslint/no-unused-vars
 	public async list(message: KlasaMessage, [role]: Role[]) {
-		let roles: any[] = message.guild.settings.get('roles.bot_roles');
+		let roles: any[] = message.guild.settings.get('roles.autobotroles');
 		roles = [...new Set(roles.filter(rol => message.guild.roles.cache.get(rol)))];
 		let roleNames: string[] = [];
 		for (let i = 0; i < roles.length; i++) {
@@ -40,8 +40,8 @@ export default class extends Command {
 	// eslint-disable-next-line consistent-return
 	public async add(message: KlasaMessage, [rol]: Role[]) {
 		if (!(rol instanceof Role)) return message.send(`❌ **${message.language.get('INVALID_ROLE')}**`);
-		if (message.guild.settings.get('roles.bot_roles').indexOf(rol.id) === -1) {
-			return message.guild.settings.update('roles.bot_roles', rol, message.guild).then(() => {
+		if (message.guild.settings.get('roles.autobotroles').indexOf(rol.id) === -1) {
+			return message.guild.settings.update('roles.autobotroles', rol, message.guild).then(() => {
 				message.send(`✅ **${message.language.get('BOT_ROLE_ADD_SUCCESS', [rol.name])}**`);
 			});
 		} else {
@@ -52,8 +52,8 @@ export default class extends Command {
 	// eslint-disable-next-line consistent-return
 	public async remove(message: KlasaMessage, [rol]: Role[]) {
 		if (!(rol instanceof Role)) return message.send(`❌ **${message.language.get('INVALID_ROLE')}**`);
-		if (message.guild.settings.get('roles.bot_roles').indexOf(rol.id) !== -1) {
-			return message.guild.settings.update('roles.bot_roles', rol, message.guild).then(() => {
+		if (message.guild.settings.get('roles.autobotroles').indexOf(rol.id) !== -1) {
+			return message.guild.settings.update('roles.autobotroles', rol, message.guild).then(() => {
 				message.send(`✅ **${message.language.get('BOT_ROLE_REMOVE_SUCCESS', [rol.name])}**`);
 			});
 		} else {
