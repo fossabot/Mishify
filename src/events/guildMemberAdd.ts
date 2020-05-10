@@ -17,10 +17,10 @@ export default class extends Event {
 		if (member.guild.settings.get('toggles.autobotroles')) {
 			if (!member.user.bot) {
 				const roles = await member.guild.settings.get('roles.autoroles');
-				member.roles.add(roles);
+				member.roles.add(roles).catch(() => null);
 			} else {
 				const roles = await member.guild.settings.get('roles.autobotroles');
-				member.roles.add(roles);
+				member.roles.add(roles).catch(() => null);
 			}
 		}
 	}
