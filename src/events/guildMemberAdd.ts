@@ -14,11 +14,16 @@ export default class extends Event {
 
 	// eslint-disable-next-line @typescript-eslint/explicit-function-return-type
 	async run(member: GuildMember) {
-		if (member.guild.settings.get('toggles.autobotroles')) {
+		// aqui se añaden los roles a los miembros
+		if (member.guild.settings.get('toggles.autoroles')) {
 			if (!member.user.bot) {
 				const roles = await member.guild.settings.get('roles.autoroles');
 				member.roles.add(roles).catch(() => null);
-			} else {
+			}
+		}
+		// y aca los rolas para los bots
+		if (member.guild.settings.get('toggles.autoroles')) {
+			if (member.user.bot) {
 				const roles = await member.guild.settings.get('roles.autobotroles');
 				member.roles.add(roles).catch(() => null);
 			}
