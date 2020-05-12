@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/ban-ts-ignore */
 /* eslint-disable no-process-env */
-import { ShardingManager, SharderEvents } from 'kurasuta';
+import { ShardingManager } from 'kurasuta';
 import { join } from 'path';
 import { Constants } from 'discord.js';
 import { config } from 'dotenv';
@@ -47,15 +47,12 @@ const sharder: ShardingManager = new ShardingManager(join(__dirname, 'Mishify'),
 		messageCacheLifetime: 120,
 
 		commandMessageLifetime: 120,
-		owners: ['497061687820812288'],
+		owners: ['497061687820812288', '685947556655923242', '599259393451753483'],
 		aliasFunctions: { returnMethod: 'run', prefix: 'funcs', enabled: true }
 	},
-	shardCount: 1,
+	shardCount: 'auto',
 	ipcSocket: 9454,
 	timeout: 60000
 });
 
 sharder.spawn();
-sharder.on(SharderEvents.MESSAGE, message => {
-	console.log(message);
-});

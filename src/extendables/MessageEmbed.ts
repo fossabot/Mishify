@@ -13,13 +13,13 @@ export default class extends Extendable {
 		});
 	}
 
-	addBetterField(title?: string, content?: string, extraSpace = false) {
+	public addBetterField(title?: string, content?: string, extraSpace = false) {
 		this.description = this.description || '';
 		this.description += `${extraSpace ? '\n' : ''}\n**${title}:** ${content}`;
 		return this;
 	}
 
-	addFieldDef(title?: string, content?: string) {
+	public addFieldDef(title?: string, content?: string) {
 		title = title || '\u200B';
 		content = content || '\u200B';
 		return this.addField(title, content);

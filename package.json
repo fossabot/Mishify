@@ -8,7 +8,7 @@
     "test:lint": "eslint --ext ts src",
     "build": "tsc -p .",
     "watch": "tsc -p . -w",
-    "start": "npm run build && node dist/index.js"
+    "start": "node dist/index.js"
   },
   "repository": {
     "type": "git",
@@ -30,6 +30,7 @@
   "devDependencies": {
     "@types/mongodb": "^3.5.14",
     "@types/node": "^13.13.4",
+    "@types/node-fetch": "^2.5.7",
     "@typescript-eslint/eslint-plugin": "^2.30.0",
     "@typescript-eslint/parser": "^2.30.0",
     "dotenv": "^8.2.0",
@@ -42,13 +43,16 @@
     "@kcp/functions": "^1.0.0",
     "canvas": "^2.6.1",
     "canvas-constructor": "^3.2.0",
+    "chokidar": "^3.4.0",
     "cluster": "^0.7.7",
+    "color-convert": "^2.0.1",
     "discord.js": "github:discordjs/discord.js",
     "klasa": "github:dirigeants/klasa#v1.0.0-alpha",
     "kurasuta": "^2.1.0",
     "moment": "^2.25.3",
     "moment-duration-format": "^2.3.2",
     "mongodb": "^3.5.7",
+    "node-fetch": "^2.6.0",
     "request": "^2.88.2"
   }
 }
