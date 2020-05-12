@@ -18,7 +18,7 @@ export default class extends Language {
 			SETTING_GATEWAY_INVALID_TYPE: ' ❌ El parámetro \'type\' debe ser o \'add\' o \'remove\'.',
 			RESOLVER_INVALID_CUSTOM: (name: any, type: any) => ` ❌ ${name} debe ser un nombre válido de ${type}`,
 			RESOLVER_INVALID_PIECE: (name: any, piece: any) => ` ❌ ${name} debe ser un nombre válido de ${piece}.`,
-			RESOLVER_INVALID_MESSAGE: (name: any) => `${name} debe ser una ID de mensaje válida.`,
+			RESOLVER_INVALID_MESSAGE: (name: any) => ` ❌ ${name} debe ser una ID de mensaje válida.`,
 			RESOLVER_INVALID_USER: (name: any) => `${name} debe ser una mención o una ID de usuario válida.`,
 			RESOLVER_INVALID_MEMBER: (name: any) => `${name} debe ser una mención o una ID de usuario válida.`,
 			RESOLVER_INVALID_CHANNEL: (name: any) => `${name} debe ser una mención o una ID de canal válida.`,
