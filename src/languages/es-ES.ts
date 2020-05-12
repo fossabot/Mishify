@@ -170,11 +170,11 @@ export default class extends Language {
 			COMMAND_JOINIMAGE_ENABLED: 'Imagen de biendenida activada.',
 			COMMAND_JOINIMAGE_DISABLED: 'Imagen de bienvenida desactivada.',
 			COMMAND_JOINIMAGE_USAGE: (prefix) => [
-				`${prefix}join_image on`,
+				`**${prefix}join_image on`,
 				`${prefix}join_image off`,
 				`${prefix}join_image message [texto]`,
 				`${prefix}join_image background [imageurl|remove]`,
-				`${prefix}join_image off [circle|welcome|message|username] [#hexadecimal|random|default]`
+				`${prefix}join_image color [circle|welcome|message|username] [#hexadecimal|random|default]**`
 			]
 		};
 	}
