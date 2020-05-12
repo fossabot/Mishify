@@ -7,9 +7,9 @@ export default class extends Language {
 		super(store, file, directory, options);
 		this.language = {
 			/* eslint-disable */
-			DEFAULT: (key: any) => `La clave '${key}' no ha sido traducido para 'es-ES' todavía.`,
+			DEFAULT: (key: any) => `❌ La clave '${key}' aún no ha sido traducido para 'es-ES'.`,
 			DEFAULT_LANGUAGE: 'Idioma predeterminado',
-			PREFIX_REMINDER: (prefix: any[]) => `El prefijo configurado para este servidor es: ${Array.isArray(prefix) ? prefix.map(pre => `\`${pre}\``).join(', ') : `\`${prefix}\``}`,
+			PREFIX_REMINDER: (prefix: any[]) => `🤖 El prefijo del bot en este servidor es: ${Array.isArray(prefix) ? prefix.map(pre => `\`${pre}\``).join(', ') : `\`${prefix}\``}`,
 			SETTING_GATEWAY_VALUE_FOR_KEY_NOEXT: (data: any, key: any) => `El valor '${data}' para la clave '${key}' no existe.`,
 			SETTING_GATEWAY_VALUE_FOR_KEY_ALREXT: (data: any, key: any) => `El valor '${data}' para la clave '${key}' ya existe.`,
 			SETTING_GATEWAY_SPECIFY_VALUE: 'Debes especificar el valor para añadir o filtrar.',
