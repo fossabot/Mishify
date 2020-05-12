@@ -1,13 +1,13 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
-import { Command, util } from '../../../lib';
-import { CommandStore, KlasaMessage } from 'klasa';
+import { Command, util as MishifyUtil } from '../../../lib';
+import { CommandStore, KlasaMessage, util } from 'klasa';
 import { MessageEmbed } from 'discord.js';
 export default class extends Command {
 
 	constructor(store: CommandStore, file: string[], directory: string) {
 		super(store, file, directory, {
-			name: 'joinimage',
-			aliases: ['join_image'],
+			name: 'join_image',
+			aliases: ['join_img'],
 			permissionLevel: 6,
 			subcommands: true,
 			premiumOnly: false,
@@ -29,10 +29,11 @@ export default class extends Command {
 
 	public async info(message: KlasaMessage): Promise<void> {
 		const { settings } = message.guild;
-		const embed = new MessageEmbed()
-			.setTitle('Bienvenida')
+		const infoEmbed = new MessageEmbed()
+			.setAuthor('Imagen de bienvenida', this.client.user.avatarURL({ format: 'png', size: 1024 }))
+			.setColor('RANDOM')
 			.addField('Uso', message.language.get('COMMAND_JOINIMAGE_USAGE', [settings.get('prefix')]));
-		await message.send(embed);
+		await message.send(infoEmbed);
 	}
 
 	public async message(message: KlasaMessage): Promise<void> {
@@ -77,7 +78,7 @@ export default class extends Command {
 
 	public parseColor(color: string) {
 		switch (color) {
-			case 'RANDOM': return util.getRandomColor();
+			case 'RANDOM': return MishifyUtil.getRandomColor();
 			case 'DEFAULT': return '#ffffff';
 			default:
 				if (/^#?[0-9a-f]{6}$/i.test(color)) return color;
