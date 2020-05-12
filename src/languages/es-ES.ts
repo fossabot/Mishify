@@ -167,8 +167,8 @@ export default class extends Language {
 			BOT_ROLE_IS_ALREADY_ADDED: (rol: string) => `El rol \`${rol}\` ya existe.`,
 			BOT_ROLE_REMOVE_SUCCESS: (rol: string) => `Se elimino \`${rol}\` correctamente.`,
 			BOT_ROLE_NOT_ADDED: (rol: string) => `El rol \`${rol}\` no ha sido añadido.`,
-			COMMAND_JOINIMAGE_ENABLED: ':white_check_mark: **| Imagen de biendenida activada.**',
-			COMMAND_JOINIMAGE_DISABLED: ':white_check_mark: **| Imagen de bienvenida desactivada.**',
+			COMMAND_JOINIMAGE_ENABLED: '✅ **| Imagen de biendenida activada.**',
+			COMMAND_JOINIMAGE_DISABLED: '✅ **| Imagen de bienvenida desactivada.**',
 			COMMAND_JOINIMAGE_USAGE: (prefix: string) => [
 				`**${prefix}join_image on`,
 				`${prefix}join_image off`,
@@ -176,8 +176,10 @@ export default class extends Language {
 				`${prefix}join_image background [imageurl|remove]`,
 				`${prefix}join_image color [circle|welcome|message|username] [#hexadecimal|random|default]**`
 			],
-			COMMAND_JOINIMG_UPDATECOLOR_SUCCESS: ':white_check_mark: **| El color ha sido actualizado correctamente.**',
-			COMMAND_JOINIMAGE_NOPROP: ':warning: **| Los parametros validos son \`[circle|welcome|message|username]\`'
+			COMMAND_JOINIMG_UPDATECOLOR_SUCCESS: '✅ **| El color ha sido actualizado correctamente.**',
+			COMMAND_JOINIMAGE_NOPROP: '⚠ **| Los parametros validos son \`[circle|welcome|message|username]\`**',
+			COMMAND_JOINIMAGE_NOCOLOR: '⚠ **| El color es requerido en hexadecimal o use \`random\` para un color aleatorio o \`default\` para el color por defecto (blanco).**'
+
 		};
 	}
 

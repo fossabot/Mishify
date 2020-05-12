@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/explicit-function-return-type */
 import { Command, util as MishifyUtil } from '../../../lib';
-import { CommandStore, KlasaMessage, util } from 'klasa';
+import { CommandStore, KlasaMessage } from 'klasa';
 import { MessageEmbed } from 'discord.js';
 export default class extends Command {
 
@@ -49,14 +49,10 @@ export default class extends Command {
 		const { settings } = message.guild;
 		prop = prop ? prop.toUpperCase() : null;
 		color = color ? color.toUpperCase() : null;
-		if (!prop) return message.sendLocale('COMMAND_JOINIMAGE_NOPROP');
+        if (!prop) return message.sendLocale('COMMAND_JOINIMAGE_NOPROP');
+        if(!color) return message.sendLocale('COMMAND_JOINIMAGE_NOCOLOR');
 		if (this.parseOptions(prop) && this.parseColor(color)) {
 			await settings.update(`join.${this.parseOptions(prop)}`, this.parseColor(color)).then(() => message.sendLocale('COMMAND_JOINIMG_UPDATECOLOR_SUCCESS'));
-		} else {
-			message.send(new MessageEmbed()
-				.setAuthor('Imagen de bienvenida', this.client.user.avatarURL({ format: 'png', size: 1024 }))
-				.setColor('RANDOM')
-				.addField('Uso', message.language.get('COMMAND_JOINIMAGE_USAGE', [settings.get('prefix')])));
 		}
 	}
 	public async on(message: KlasaMessage): Promise<void> {
