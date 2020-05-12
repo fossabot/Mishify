@@ -34,6 +34,7 @@ export default class extends Language {
 			RESOLVER_INVALID_DATE: (name: any) => `${name} debe ser una fecha válida.`,
 			RESOLVER_INVALID_DURATION: (name: any) => `${name} debe ser una duración válida.`,
 			RESOLVER_INVALID_TIME: (name: any) => `${name} debe ser una fecha o duración válida.`,
+			RESOLVER_INVALID_COLOR: (name: any) => `${name} debe ser un color valido`,
 			RESOLVER_STRING_SUFFIX: ' carácteres',
 			RESOLVER_MINMAX_EXACTLY: (name: any, min: any, suffix: any) => `${name} debe ser exactamente ${min}${suffix}.`,
 			RESOLVER_MINMAX_BOTH: (name: any, min: any, max: any, suffix: any) => `${name} debe estar entre ${min} y ${max}${suffix}.`,
@@ -160,11 +161,21 @@ export default class extends Language {
 			],
 			COMMAND_STATS_DESCRIPTION: 'Provee algunos detalles sobre el bot y sus estadísticas.',
 			MESSAGE_PROMPT_TIMEOUT: 'El tiempo ha expirado.',
+			// de aqui para abajo escribo mi lang es-ES
 			BOT_ROLE_ADD_SUCCESS: (rol: string) => `Se añadio \`${rol}\` correctamente.`,
 			INVALID_ROLE: 'Por favor específica un rol valido.',
 			BOT_ROLE_IS_ALREADY_ADDED: (rol: string) => `El rol \`${rol}\` ya existe.`,
 			BOT_ROLE_REMOVE_SUCCESS: (rol: string) => `Se elimino \`${rol}\` correctamente.`,
-			BOT_ROLE_NOT_ADDED: (rol: string) => `El rol \`${rol}\` no ha sido añadido.`
+			BOT_ROLE_NOT_ADDED: (rol: string) => `El rol \`${rol}\` no ha sido añadido.`,
+			COMMAND_JOINIMAGE_ENABLED: 'Imagen de biendenida activada.',
+			COMMAND_JOINIMAGE_DISABLED: 'Imagen de bienvenida desactivada.',
+			COMMAND_JOINIMAGE_USAGE: (prefix) => [
+				`${prefix}join_image on`,
+				`${prefix}join_image off`,
+				`${prefix}join_image message [texto]`,
+				`${prefix}join_image background [imageurl|remove]`,
+				`${prefix}join_image off [circle|welcome|message|username] [#hexadecimal|random|default]`
+			]
 		};
 	}
 
