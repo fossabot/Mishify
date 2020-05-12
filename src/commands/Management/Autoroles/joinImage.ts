@@ -23,7 +23,7 @@ export default class extends Command {
 		this
 			// eslint-disable-next-line consistent-return
 			.createCustomResolver('key', (arg, possible, message, [action]) => {
-				if (['info', 'on', 'off'].includes(action) || arg) return arg;
+				if (['on', 'off'].includes(action) || arg) return arg;
 			});
 	}
 
@@ -45,26 +45,28 @@ export default class extends Command {
 	}
 
 	// eslint-disable-next-line consistent-return
-	public async color(message: KlasaMessage, [value, color]: [string, string]): Promise<any> {
-		if (!value) return message.send(`⚠ | **${message.language.get('COMMAND_JOINIMAGE_NOVALUE')}**`);
-		if (!color) return message.reply('color invalido');
+	public async color(message: KlasaMessage, [prop, color]: [string, string]): Promise<any> {
 		const { settings } = message.guild;
-		value = value.toUpperCase();
-		color = color.toUpperCase();
-		if (this.parseOptions(value) && this.parseColor(color)) {
-			await settings.update(`join.${this.parseOptions(value)}`, this.parseColor(color));
+		prop = prop ? prop.toUpperCase() : null;
+		color = color ? color.toUpperCase() : null;
+		if (!prop) return message.sendLocale('COMMAND_JOINIMAGE_NOPROP');
+		if (this.parseOptions(prop) && this.parseColor(color)) {
+			await settings.update(`join.${this.parseOptions(prop)}`, this.parseColor(color)).then(() => message.sendLocale('COMMAND_JOINIMG_UPDATECOLOR_SUCCESS'));
 		} else {
-			message.send('aqui se enviara un texto cuando no se cumple la condicional');
+			message.send(new MessageEmbed()
+				.setAuthor('Imagen de bienvenida', this.client.user.avatarURL({ format: 'png', size: 1024 }))
+				.setColor('RANDOM')
+				.addField('Uso', message.language.get('COMMAND_JOINIMAGE_USAGE', [settings.get('prefix')])));
 		}
 	}
 	public async on(message: KlasaMessage): Promise<void> {
 		const { settings } = message.guild;
-		await settings.update('join.enabled', true).then(() => message.send(`✅ **| ${message.language.get('COMMAND_JOINIMAGE_ENABLED')}**`));
+		await settings.update('join.enabled', true).then(() => message.sendLocale('COMMAND_JOINIMAGE_ENABLED'));
 	}
 
 	public async off(message: KlasaMessage): Promise<void> {
 		const { settings } = message.guild;
-		await settings.update('join.enabled', false).then(() => message.send(`✅ **| ${message.language.get('COMMAND_JOINIMAGE_DISABLED')}**`));
+		await settings.update('join.enabled', false).then(() => message.send('COMMAND_JOINIMAGE_DISABLED'));
 	}
 	public parseOptions(value: string): string | null {
 		switch (value) {
