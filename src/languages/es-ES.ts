@@ -168,18 +168,45 @@ export default class extends Language {
 			BOT_ROLE_IS_ALREADY_ADDED: (rol: string) => ` ❌ El rol \`${rol}\` ya existe.`,
 			BOT_ROLE_REMOVE_SUCCESS: (rol: string) => `El rol \`${rol}\` se añadió correctamente.`,
 			BOT_ROLE_NOT_ADDED: (rol: string) => ` ❌ El rol \`${rol}\` no ha sido añadido.`,
-			COMMAND_JOINIMAGE_ENABLED: ' ✅ **| Imagen de biendenida activada.**',
-			COMMAND_JOINIMAGE_DISABLED: ' ✅ **| Imagen de bienvenida desactivada.**',
-			COMMAND_JOINIMAGE_USAGE: (prefix: string) => [
-				`**${prefix}join_image on`,
-				`${prefix}join_image off`,
-				`${prefix}join_image message [texto]`,
-				`${prefix}join_image background [imageurl|remove]`,
-				`${prefix}join_image color [circle|welcome|message|username] [#hexadecimal|random|default]**`
+			COMANDO_WELCOMEIMAGE_ACTIVADO: ' ✅ **| Imagen de biendenida activada.**',
+			COMANDO_WELCOMEIMAGE_DESACTIVADO: ' ✅ **| Imagen de bienvenida desactivada.**',
+			COMANDO_WELCOMEIMAGE_USO: (prefix: string) => [
+				`**${prefix}welcome_image on`,
+				`${prefix}welcome_image off`,
+				`${prefix}welcome_image channel [channelid|channelname|#channelmention]`,
+				`${prefix}welcome_image message [texto]`,
+				`${prefix}welcome_image background [imageurl|remove]`,
+				`${prefix}welcome_image color [circle|welcome|message|username] [#hexadecimal|random|default]**`
 			],
-			COMMAND_JOINIMG_UPDATECOLOR_SUCCESS: '✅ **| El color ha sido actualizado correctamente.**',
-			COMMAND_JOINIMAGE_NOPROP: '⚠ **| Los parametros validos son \`[circle|welcome|message|username]\`**',
-			COMMAND_JOINIMAGE_NOCOLOR: '⚠ **| El color es requerido en hexadecimal (#ffffff o #0a2f31), use \`random\` para un color aleatorio o \`default\` para el color por defecto (blanco).**'
+			COMANDO_WELCOMEIMAGE_SUB_COLOR_SIN_PROPIEDAD: '⚠ **| Use una de las siguientes opciones \`circle, welcome, message o username\`**',
+			COMANDO_WELCOMEIMAGE_SUB_COLOR_SIN_COLOR: '⚠ **| El color es requerido en hexadecimal (#ffffff o #0a2f31), use \`random\` para un color aleatorio o \`default\` para el color por defecto (blanco).**',
+			COMANDO_WELCOMEIMAGE_SUB_COLOR_ACTUALIZADO: '✅ **| El color ha sido actualizado correctamente.**',
+			COMANDO_WELCOMEIMAGE_SUB_BACKGROUND_ACTUALIZADO: '✅ ** | La imagen se actualizo correctamente.**',
+			COMANDO_WELCOMEIMAGE_SUB_BACKGROUND_NO_URL: '⚠ **| URL inválida.**',
+			COMANDO_WELCOMEIMAGE_SUB_MSG_ACTUALIZADO: '✅ **| El mensaje ha sido actualizado correctamente.**',
+			COMANDO_WELCOMEIMAGE_SUB_NO_MSG: '⚠ **| Escriba un mensaje valido.**',
+			COMANDO_WELCOMEIMAGE_SUB_CHANNEL_NO_CANAL: '⚠ **| Escribe una id o nombre del canal.**',
+			COMANDO_WELCOMEIMAGE_SUB_CHANNEL_ACTUALIZADO: (channelmention: string) => `✅ **| El canal ${channelmention} se ha establecido correctamente.**`,
+			COMANDO_LEAVEIMAGE_ACTIVADO: ' ✅ **| Imagen de despedida activada.**',
+			COMANDO_LEAVEIMAGE_DESACTIVADO: ' ✅ **| Imagen de despedida desactivada.**',
+			COMANDO_LEAVEIMAGE_USO: (prefix: string) => [
+				`**${prefix}leave_image on`,
+				`${prefix}leave_image off`,
+				`${prefix}leave_image channel [channelid|channelname|#channelmention]`,
+				`${prefix}leave_image message [texto]`,
+				`${prefix}leave_image background [imageurl|remove]`,
+				`${prefix}leave_image color [circle|welcome|message|username] [#hexadecimal|random|default]**`
+			],
+			COMANDO_LEAVEIMAGE_SUB_COLOR_SIN_PROPIEDAD: '⚠ **| Use una de las siguientes opciones \`circle, welcome, message o username\`**',
+			COMANDO_LEAVEIMAGE_SUB_COLOR_SIN_COLOR: '⚠ **| El color es requerido en hexadecimal (#ffffff o #0a2f31), use \`random\` para un color aleatorio o \`default\` para el color por defecto (blanco).**',
+			COMANDO_LEAVEIMAGE_SUB_COLOR_ACTUALIZADO: '✅ **| El color ha sido actualizado correctamente.**',
+			COMANDO_LEAVEIMAGE_SUB_BACKGROUND_ACTUALIZADO: '✅ ** | La imagen se actualizo correctamente.**',
+			COMANDO_LEAVEIMAGE_SUB_BACKGROUND_NO_URL: '⚠ **| URL inválida.**',
+			COMANDO_LEAVEIMAGE_SUB_MSG_ACTUALIZADO: '✅ **| El mensaje ha sido actualizado correctamente.**',
+			COMANDO_LEAVEIMAGE_SUB_NO_MSG: '⚠ **| Escriba un mensaje valido.**',
+			COMANDO_LEAVEIMAGE_SUB_CHANNEL_NO_CANAL: '⚠ **| Escribe una id o nombre del canal.**',
+			COMANDO_LEAVEIMAGE_SUB_CHANNEL_ACTUALIZADO: (channelmention: string) => `✅ **| El canal ${channelmention} se ha establecido correctamente.**`
+
 
 		};
 	}

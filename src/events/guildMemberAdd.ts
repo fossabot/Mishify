@@ -31,13 +31,12 @@ export default class extends Event {
 			}
 		}
 
-		if (settings.get('join.enabled')) {
-			if (channelsCache.has(settings.get('join.channel'))) {
+		if (settings.get('welcome_image.enabled')) {
+			if (channelsCache.has(settings.get('welcome_image.channel'))) {
 				// @ts-ignore
-				const image = await this.client.funcs.joinOrLeaveImage(member.user.avatarURL({ format: 'png', size: 1024 }), member.user.tag, 'join', settings.get('join'));
-				const channel = channelsCache.get(settings.get('join.channel'));
-				// @ts-ignore
-				channel.send({ files: [{ attachment: image, name: `${member.user.id}.png` }] });
+				const image = await this.client.funcs.welcomeOrLeaveImage(member.user.avatarURL({ format: 'png', size: 1024 }), member.user.tag, 'welcome', settings.get('welcome_image'));
+				const channel: any = channelsCache.get(settings.get('welcome_image.channel'));
+				channel.send({ files: [{ attachment: image, name: `${member.user.id}.png` }] }).catch(() => null);
 			}
 		}
 	}

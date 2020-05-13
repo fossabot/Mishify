@@ -40,7 +40,7 @@ export default class extends Argument {
 		switch (querySearch.length) {
 			case 0: throw `${possible.name} debe ser un nombre válido, ID o mención`;
 			case 1: return querySearch[0];
-			default: throw `Se encontraron múltiples coincidencias:  \`${querySearch.map(user => user.tag).join('`, `')}\``;
+			default: throw `**Se encontraron múltiples coincidencias:**  \`${querySearch.map(user => user.tag).join('`, `')}\``;
 		}
 	}
 

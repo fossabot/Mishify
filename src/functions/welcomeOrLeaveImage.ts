@@ -7,8 +7,8 @@ Canvas.registerFont(resolve(join(__dirname, '..', '..', 'assets', 'fonts', 'Fred
 
 export default class extends Function {
 
-	async run(avataURL: string, memberTag: string, type: string, { background, welcomeColor, circleColor, usernameColor }): Promise<Buffer> {
-		if (type === 'join') {
+	async run(avataURL: string, memberTag: string, type: string, { background, welcomeColor, circleColor, usernameColor, messageColor, message }): Promise<Buffer> {
+		if (type === 'welcome') {
 			type = 'BIENVENID@';
 		} else if (type === 'leave') {
 			type = 'ADIÓS';
@@ -33,11 +33,17 @@ export default class extends Function {
 			.setTextAlign('center')
 			.setColor(welcomeColor)
 			.setTextFont('50pt FredokaOne Regular')
-			.addText(type, 550, 300)
+			.addText(type, 550, 310)
 			.setTextAlign('center')
 			.setColor(usernameColor)
 			.setTextFont('50pt FredokaOne Regular')
 			.addResponsiveText(memberTag, 550, 375, 600);
+		if (typeof message === 'string') {
+			canvasImage.setTextAlign('center')
+				.setColor(messageColor)
+				.setTextFont('50pt FredokaOne Regular')
+				.addResponsiveText(message, 550, 425, 600);
+		}
 		return canvasImage.toBufferAsync();
 	}
 
