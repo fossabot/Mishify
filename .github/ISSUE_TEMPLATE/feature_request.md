@@ -1,20 +1,10 @@
----
-name: Feature request
-about: Suggest an idea for this project
-title: ''
-labels: ''
-assignees: ''
+# Sugerencias
+Si deseas hacernos una sugerencia, puedes decírnoslo por aquí. Para la sugerencia necesitamos información clara y, a poder ser, algún soporte como una tabla o un dibujo (*que si es una chapuza no pasa nada, pero al menos se debe entender*)
 
----
+## Plantilla
 
-**Is your feature request related to a problem? Please describe.**
-A clear and concise description of what the problem is. Ex. I'm always frustrated when [...]
+ - Nombre de la sugerencia: 
+ - Tipo de sugerencia: 
+ - Detalles: 
 
-**Describe the solution you'd like**
-A clear and concise description of what you want to happen.
-
-**Describe alternatives you've considered**
-A clear and concise description of any alternative solutions or features you've considered.
-
-**Additional context**
-Add any other context or screenshots about the feature request here.
+## Esperamos que te sirva de ayuda, reibirás una respuesta cuando el internet funcione o se lo robemos a nuestro vecino XD pero recibirás una respuesta pronto
