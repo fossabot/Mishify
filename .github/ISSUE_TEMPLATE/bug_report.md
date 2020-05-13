@@ -56,5 +56,8 @@ Quita la X del incorrecto
  - Complementos: 
  - Nº de Servers en los que te has unido (aprox): 
  - Bots de tu server: 
+ 
+ ## Otro soporte de información (capturas, etc)
+ * Escribe y pon imágenes aqui
 
 ## Esperamos poder haber sido de ayuda. Recibirás una repuesta en unos, ehhh, ehhh. Ni idea, pero recibirás una respuesta pronto XD
