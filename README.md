@@ -1,4 +1,6 @@
 # Mishify
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMishify%2FMishify.svg?type=shield)](https://app.fossa.io/projects/git%2Bgithub.com%2FMishify%2FMishify?ref=badge_shield)
+
 
 Mishify, el bot de Discord creado por Phamzito
 
@@ -40,3 +42,7 @@ En caso de que necesites contactar con algún dev, te dejamos los siguientes enl
 
 * [Phamzito (Mishify Community)](https://discord.gg/DpNgRU2)
 * [Gátomo (Gátomo 🧪)](https://discord.gg/Pg3eeyN)
+
+
+## License
+[![FOSSA Status](https://app.fossa.io/api/projects/git%2Bgithub.com%2FMishify%2FMishify.svg?type=large)](https://app.fossa.io/projects/git%2Bgithub.com%2FMishify%2FMishify?ref=badge_large)
